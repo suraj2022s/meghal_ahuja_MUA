@@ -8,7 +8,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="styles.css" />
 </head><body data-page='testimonials' class='bg-white text-gray-800'>
-<header class="fixed top-0 inset-x-0 z-50 bg-white/80 nav-blur border-b border-gray-100">
+<header class="fixed top-0 inset-x-0 z-50 bg-white/75 nav-blur border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-3">
@@ -31,41 +31,36 @@
 
       <!-- Mobile button -->
       <button id="mobileBtn" class="md:hidden p-2 rounded-lg border" aria-label="Open menu">
-        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
       </button>
     </div>
   </div>
 
-  <!-- Backdrop (forced on top) -->
-  <div id="mobileBackdrop"
-       style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.30);z-index:99998;"></div>
-
-  <!-- Full-screen panel (forced on top, with inline link styles) -->
-  <div id="mobileMenu"
-       style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;overflow:auto;z-index:99999;">
-    <div style="padding:16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee;">
-      <span style="font-weight:600">Menu</span>
+  <!-- Mobile panel -->
+  <div id="mobileMenu" class="md:hidden hidden fixed inset-0 bg-white">
+    <div class="p-4 flex items-center justify-between border-b">
+      <span class="font-semibold">Menu</span>
       <button id="mobileClose" class="p-2 rounded-lg border" aria-label="Close menu">
-        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
       </button>
     </div>
-
-    <nav id="mobileNav" style="padding:16px 24px;font-size:18px;line-height:1.4;">
-      <a href="index.html" style="display:block;padding:12px 0;border-bottom:1px solid #eee;color:#111;">About</a>
-      <a href="services.html" style="display:block;padding:12px 0;border-bottom:1px solid #eee;color:#111;">Services</a>
-      <a href="gallery.html" style="display:block;padding:12px 0;border-bottom:1px solid #eee;color:#111;">Gallery</a>
-      <a href="student-work.html" style="display:block;padding:12px 0;border-bottom:1px solid #eee;color:#111;">Student Work</a>
-      <a href="tutorials.html" style="display:block;padding:12px 0;border-bottom:1px solid #eee;color:#111;">Tutorials</a>
-      <a href="products.html" style="display:block;padding:12px 0;border-bottom:1px solid #eee;color:#111;">Products</a>
-      <a href="client-love.html" style="display:block;padding:12px 0;border-bottom:1px solid #eee;color:#111;">Client Love</a>
-      <a href="faq.html" style="display:block;padding:12px 0;border-bottom:1px solid #eee;color:#111;">FAQ</a>
-      <a href="contact.html" style="display:block;padding:12px 0;margin-top:8px;">
-        <span style="display:inline-block;width:100%;text-align:center;padding:12px 16px;border-radius:12px;color:#fff;background:linear-gradient(90deg,var(--brand),var(--accent))">Book</span>
-      </a>
+    <nav class="px-6 py-4 grid gap-3 text-lg">
+      <a href="index.html" class="py-2 border-b">About</a>
+      <a href="services.html" class="py-2 border-b">Services</a>
+      <a href="gallery.html" class="py-2 border-b">Gallery</a>
+      <a href="student-work.html" class="py-2 border-b">Student Work</a>
+      <a href="tutorials.html" class="py-2 border-b">Tutorials</a>
+      <a href="products.html" class="py-2 border-b">Products</a>
+      <a href="client-love.html" class="py-2 border-b">Client Love</a>
+      <a href="faq.html" class="py-2 border-b">FAQ</a>
+      <a href="contact.html" class="py-3 rounded-xl text-center text-white mt-2" style="background:linear-gradient(90deg,var(--brand),var(--accent))">Book</a>
     </nav>
   </div>
 </header>
-
 <section class="pt-28 sm:pt-32 pb-8">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h1 id="testiTitle" class="serif text-3xl sm:text-4xl font-bold text-center">Client Love</h1>
