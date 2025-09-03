@@ -42,3 +42,14 @@ body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica
 .filter-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 .chip{padding:6px 12px;border-radius:999px;border:1px solid #e5e7eb;cursor:pointer}
 .chip.active{background:#f3e8ff;border-color:#e9d5ff;color:#7e22ce}
+/* Mobile menu visibility & link styles */
+#mobileMenu { background:#fff; }
+#mobileNav .mobile-link {
+  display:block;
+  padding:14px 0;
+  border-bottom:1px solid #eee;
+  color:#111;
+  text-decoration:none;
+}
+#mobileNav .mobile-link:last-child { border-bottom:0; }
+
