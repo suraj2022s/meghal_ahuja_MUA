@@ -414,21 +414,84 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Mobile menu toggle (with backdrop + scroll lock)
-  // Mobile menu toggle (hard, CSS-independent)
-// Mobile menu toggle (inline styles, no class dependencies)
+// Mobile menu toggle (inline styles + dynamic links; works on every page)
 (function () {
   const btn = document.getElementById('mobileBtn');
   const closeBtn = document.getElementById('mobileClose');
   const panel = document.getElementById('mobileMenu');
   const backdrop = document.getElementById('mobileBackdrop');
 
+  // Build the link list if it's missing
+  function ensureLinks() {
+    if (!panel) return;
+    // Force overlay styles so nothing can cover it
+    panel.style.position = 'fixed';
+    panel.style.top = '0';
+    panel.style.left = '0';
+    panel.style.right = '0';
+    panel.style.bottom = '0';
+    panel.style.background = '#fff';
+    panel.style.overflow = 'auto';
+    panel.style.zIndex = '2147483647'; // max
+
+    if (backdrop) {
+      backdrop.style.position = 'fixed';
+      backdrop.style.top = '0';
+      backdrop.style.left = '0';
+      backdrop.style.right = '0';
+      backdrop.style.bottom = '0';
+      backdrop.style.background = 'rgba(0,0,0,.30)';
+      backdrop.style.zIndex = '2147483646';
+    }
+
+    // If we already have a nav with links, stop
+    let nav = panel.querySelector('#mobileNav');
+    if (nav && nav.querySelectorAll('a').length >= 5) return;
+
+    // Remove any old nav, then build a fresh one
+    if (nav) nav.remove();
+    nav = document.createElement('nav');
+    nav.id = 'mobileNav';
+    nav.style.cssText = 'padding:16px 24px;font-size:18px;line-height:1.4;';
+
+    const links = [
+      ['index.html', 'About'],
+      ['services.html', 'Services'],
+      ['gallery.html', 'Gallery'],
+      ['student-work.html', 'Student Work'],
+      ['tutorials.html', 'Tutorials'],
+      ['products.html', 'Products'],
+      ['client-love.html', 'Client Love'],
+      ['faq.html', 'FAQ'],
+      ['contact.html', 'Contact / Book'],
+    ];
+
+    links.forEach(([href, label], i) => {
+      const a = document.createElement('a');
+      a.href = href;
+      a.textContent = label === 'Contact / Book' ? '' : label;
+      a.style.cssText = 'display:block;padding:12px 0;border-bottom:1px solid #eee;color:#111;text-decoration:none;';
+      if (label === 'Contact / Book') {
+        a.style.borderBottom = '0';
+        const pill = document.createElement('span');
+        pill.textContent = 'Book';
+        pill.style.cssText = 'display:inline-block;width:100%;text-align:center;padding:12px 16px;border-radius:12px;color:#fff;background:linear-gradient(90deg,var(--brand),var(--accent));margin-top:8px;';
+        a.appendChild(pill);
+      }
+      nav.appendChild(a);
+    });
+
+    panel.appendChild(nav);
+  }
+
   function openMenu() {
+    ensureLinks();
     if (panel) panel.style.display = 'block';
     if (backdrop) backdrop.style.display = 'block';
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
   }
+
   function closeMenu() {
     if (panel) panel.style.display = 'none';
     if (backdrop) backdrop.style.display = 'none';
@@ -439,6 +502,10 @@ document.addEventListener('DOMContentLoaded', () => {
   btn && btn.addEventListener('click', openMenu);
   closeBtn && closeBtn.addEventListener('click', closeMenu);
   backdrop && backdrop.addEventListener('click', closeMenu);
-  if (panel) panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  if (panel) panel.addEventListener('click', (e) => {
+    // Close when clicking a link
+    const t = e.target.closest('a');
+    if (t) closeMenu();
+  });
 })();
 });
