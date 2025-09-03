@@ -415,28 +415,29 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Mobile menu toggle (with backdrop + scroll lock)
-  (function () {
-    const btn = document.getElementById('mobileBtn');
-    const closeBtn = document.getElementById('mobileClose');
-    const panel = document.getElementById('mobileMenu');
-    const backdrop = document.getElementById('mobileBackdrop');
+  // Mobile menu toggle (hard, CSS-independent)
+(function () {
+  const btn = document.getElementById('mobileBtn');
+  const closeBtn = document.getElementById('mobileClose');
+  const panel = document.getElementById('mobileMenu');
+  const backdrop = document.getElementById('mobileBackdrop');
 
-    function openMenu() {
-      panel && panel.classList.remove('hidden');
-      backdrop && backdrop.classList.remove('hidden');
-      document.documentElement.classList.add('overflow-hidden');
-      document.body.classList.add('overflow-hidden');
-    }
-    function closeMenu() {
-      panel && panel.classList.add('hidden');
-      backdrop && backdrop.classList.add('hidden');
-      document.documentElement.classList.remove('overflow-hidden');
-      document.body.classList.remove('overflow-hidden');
-    }
+  function openMenu() {
+    if (panel) panel.style.display = 'block';
+    if (backdrop) backdrop.style.display = 'block';
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    if (panel) panel.style.display = 'none';
+    if (backdrop) backdrop.style.display = 'none';
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  }
 
-    btn && btn.addEventListener('click', openMenu);
-    closeBtn && closeBtn.addEventListener('click', closeMenu);
-    backdrop && backdrop.addEventListener('click', closeMenu);
-    if (panel) panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-  })();
+  btn && btn.addEventListener('click', openMenu);
+  closeBtn && closeBtn.addEventListener('click', closeMenu);
+  backdrop && backdrop.addEventListener('click', closeMenu);
+  if (panel) panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+})();
 });
