@@ -1,10 +1,11 @@
-
 backend:
   name: git-gateway
   branch: main
 
 media_folder: "assets"
 public_folder: "/assets"
+
+publish_mode: simple
 
 collections:
   - name: "content"
@@ -18,17 +19,22 @@ collections:
             name: business
             widget: object
             fields:
-              - {label: "Name", name: "name", widget: string, default: "Meghal Ahuja • MUA"}
-              - {label: "Tagline", name: "tagline", widget: string, required: false}
-              - {label: "Short bio", name: "bio_short", widget: text, required: false}
-              - {label: "City", name: "city", widget: string, required: false}
-              - {label: "Areas", name: "areas", widget: string, required: false}
-              - {label: "Hours", name: "hours", widget: string, required: false}
-              - {label: "WhatsApp number", name: "phone", widget: string}
-              - {label: "Booking email", name: "email", widget: string}
-              - {label: "Instagram URL", name: "instagram", widget: string, required: false}
-          - {label: "Hero image (optional)", name: "hero_image", widget: image, required: false}
-          - {label: "CTA", name: "cta", widget: object, fields: [{label:"Primary",name:"primary",widget:string},{label:"Secondary",name:"secondary",widget:string}]}
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string", required: false }
+              - { label: "Short bio", name: "bio_short", widget: "text", required: false }
+              - { label: "City", name: "city", widget: "string", required: false }
+              - { label: "Areas", name: "areas", widget: "string", required: false }
+              - { label: "Hours", name: "hours", widget: "string", required: false }
+              - { label: "WhatsApp number", name: "phone", widget: "string" }
+              - { label: "Booking email", name: "email", widget: "string" }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+          - { label: "Hero image (optional)", name: "hero_image", widget: "image", required: false }
+          - label: "CTA"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Primary", name: "primary", widget: "string" }
+              - { label: "Secondary", name: "secondary", widget: "string" }
 
       - file: "content/services.json"
         label: "Services & Pricing"
@@ -38,9 +44,9 @@ collections:
             name: items
             widget: list
             fields:
-              - {label: "Service name", name: "name", widget: string}
-              - {label: "Price", name: "price", widget: string, required: false}
-              - {label: "Description", name: "desc", widget: text, required: false}
+              - { label: "Service name", name: "name", widget: "string" }
+              - { label: "Price", name: "price", widget: "string", required: false }
+              - { label: "Description", name: "desc", widget: "text", required: false }
 
       - file: "content/gallery.json"
         label: "Portfolio Gallery"
@@ -50,7 +56,7 @@ collections:
             name: images
             widget: list
             fields:
-              - {label: "Image", name: "image", widget: image}
+              - { label: "Image", name: "image", widget: "image" }
 
       - file: "content/accolades.json"
         label: "Accolades"
@@ -59,7 +65,7 @@ collections:
           - label: Items
             name: items
             widget: list
-            field: {label: "Text", name: "text", widget: string}
+            field: { label: "Text", name: "text", widget: "string" }
 
       - file: "content/press.json"
         label: "Press & Logos"
@@ -69,9 +75,9 @@ collections:
             name: items
             widget: list
             fields:
-              - {label: "Logo", name: "image", widget: image}
-              - {label: "Alt text", name: "alt", widget: string, required: false}
-              - {label: "Link", name: "link", widget: string, required: false}
+              - { label: "Logo", name: "image", widget: "image" }
+              - { label: "Alt text", name: "alt", widget: "string", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
 
       - file: "content/faq.json"
         label: "FAQ"
@@ -81,8 +87,8 @@ collections:
             name: items
             widget: list
             fields:
-              - {label: "Question", name: "q", widget: string}
-              - {label: "Answer", name: "a", widget: text}
+              - { label: "Question", name: "q", widget: "string" }
+              - { label: "Answer", name: "a", widget: "text" }
 
       - file: "content/students.json"
         label: "Student Work"
@@ -93,11 +99,11 @@ collections:
             widget: list
             summary: "{{fields.name}} — {{fields.cohort}}"
             fields:
-              - {label: "Name", name: "name", widget: string}
-              - {label: "Cohort (optional)", name: "cohort", widget: string, required: false}
-              - {label: "Instagram (optional)", name: "instagram", widget: string, required: false}
-              - {label: "Quote / Testimonial", name: "quote", widget: text, required: false}
-              - {label: "Image", name: "image", widget: image}
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Cohort (optional)", name: "cohort", widget: "string", required: false }
+              - { label: "Instagram (optional)", name: "instagram", widget: "string", required: false }
+              - { label: "Quote / Testimonial", name: "quote", widget: "text", required: false }
+              - { label: "Image", name: "image", widget: "image" }
 
       - file: "content/tutorials.json"
         label: "Makeup Tutorials"
@@ -108,13 +114,16 @@ collections:
             widget: list
             summary: "{{fields.category}} — {{fields.title}}"
             fields:
-              - {label: "Category", name: "category", widget: select, options: ["Eyes","Face","Lips"]}
-              - {label: "Title", name: "title", widget: string}
-              - {label: "Thumbnail", name: "thumb", widget: image, required: false}
-              - {label: "YouTube URL", name: "youtube", widget: string, required: false}
-              - {label: "Difficulty", name: "difficulty", widget: string, required: false}
-              - {label: "Duration", name: "duration", widget: string, required: false}
-              - {label: "Steps", name: "steps", widget: list, field: {label:"Step", name:"step", widget:string}, required: false}
+              - { label: "Category", name: "category", widget: "select", options: ["Eyes","Face","Lips"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Thumbnail", name: "thumb", widget: "image", required: false }
+              - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+              - { label: "Difficulty", name: "difficulty", widget: "string", required: false }
+              - { label: "Duration", name: "duration", widget: "string", required: false }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                field: { label: "Step", name: "step", widget: "string" }
 
       - file: "content/tips.json"
         label: "Makeup Tips"
@@ -124,8 +133,8 @@ collections:
             name: items
             widget: list
             fields:
-              - {label: "Title", name: "title", widget: string}
-              - {label: "Body", name: "body", widget: text}
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
 
       - file: "content/products.json"
         label: "Products I Use"
@@ -136,27 +145,26 @@ collections:
             widget: list
             summary: "{{fields.category}} — {{fields.brand}} {{fields.name}}"
             fields:
-              - {label: "Category", name: "category", widget: select, options: ["Skin Prep","Face","Eyes","Lips","Tools"]}
-              - {label: "Brand", name: "brand", widget: string}
-              - {label: "Product name", name: "name", widget: string}
-              - {label: "Image", name: "image", widget: image, required: false}
-              - {label: "Purchase link", name: "link", widget: string, required: false}
-              - {label: "Notes (why I love it)", name: "notes", widget: text, required: false}
+              - { label: "Category", name: "category", widget: "select", options: ["Skin Prep","Face","Eyes","Lips","Tools"] }
+              - { label: "Brand", name: "brand", widget: "string" }
+              - { label: "Product name", name: "name", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Purchase link", name: "link", widget: "string", required: false }
+              - { label: "Notes (why I love it)", name: "notes", widget: "text", required: false }
 
       - file: "content/testimonials.json"
         label: "Client Love"
         name: "testimonials"
         fields:
-          - {label: "Title", name: "title", widget: string, default: "Client Love", required: false}
-          - {label: "Subtitle", name: "subtitle", widget: string, required: false}
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
           - label: Items
             name: items
             widget: list
             summary: "{{fields.name}} — {{fields.role}}"
             fields:
-              - {label: "Name", name: "name", widget: string}
-              - {label: "Role (Bride / Photoshoot etc.)", name: "role", widget: string, required: false}
-              - {label: "Avatar", name: "avatar", widget: image, required: false}
-              - {label: "Rating (1–5)", name: "rating", widget: number, value_type: "int", min: 1, max: 5, required: false}
-              - {label: "Quote", name: "quote", widget: text}
-publish_mode: simple
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role (Bride / Photoshoot etc.)", name: "role", widget: "string", required: false }
+              - { label: "Avatar", name: "avatar", widget: "image", required: false }
+              - { label: "Rating (1–5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5, required: false }
+              - { label: "Quote", name: "quote", widget: "text" }
