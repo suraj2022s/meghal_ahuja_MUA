@@ -1,0 +1,4 @@
+/content/*
+  Cache-Control: max-age=0, must-revalidate
+/assets/*
+  Cache-Control: max-age=0, must-revalidate

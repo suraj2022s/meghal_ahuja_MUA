@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "category": "Skin Prep",
+      "brand": "Embryolisse",
+      "name": "Lait‑Crème Concentré",
+      "image": "assets/products/embryolisse.jpg",
+      "link": "https://example.com/embryolisse",
+      "notes": "Universal moisturizer/primer—great under HD base."
+    },
+    {
+      "category": "Face",
+      "brand": "NARS",
+      "name": "Light Reflecting Foundation",
+      "image": "assets/products/nars_lrf.jpg",
+      "link": "https://example.com/nars",
+      "notes": "Natural finish, buildable, long‑wear."
+    },
+    {
+      "category": "Eyes",
+      "brand": "Huda Beauty",
+      "name": "Brown Obsessions Palette",
+      "image": "assets/products/huda_brown.jpg",
+      "link": "https://example.com/huda",
+      "notes": "Neutral mattes + shimmers for soft glam."
+    },
+    {
+      "category": "Lips",
+      "brand": "Maybelline",
+      "name": "SuperStay Matte Ink",
+      "image": "assets/products/superstay.jpg",
+      "link": "https://example.com/maybelline",
+      "notes": "Transfer‑resistant bold color."
+    },
+    {
+      "category": "Tools",
+      "brand": "Beautyblender",
+      "name": "Original Sponge",
+      "image": "assets/products/beautyblender.jpg",
+      "link": "https://example.com/bb",
+      "notes": "Effortless seamless blending."
+    }
+  ]
+}

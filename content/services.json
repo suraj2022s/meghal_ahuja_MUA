@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "name": "Bridal HD Makeup",
+      "price": "₹14,999",
+      "desc": "Skin prep, HD base, hair, draping & lashes."
+    },
+    {
+      "name": "Party / Occasion",
+      "price": "₹3,999",
+      "desc": "Soft glam, dewy or bold."
+    },
+    {
+      "name": "Photoshoot / Editorial",
+      "price": "₹7,999",
+      "desc": "Camera-ready looks."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "items": [
+    {
+      "category": "Eyes",
+      "title": "Soft Brown Smokey Eye",
+      "thumb": "assets/tutorials/eyes1.jpg",
+      "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "difficulty": "Easy",
+      "duration": "6 min",
+      "steps": [
+        "Prime lids for longevity",
+        "Sweep medium brown through crease",
+        "Deepen outer V; shimmer on lid",
+        "Tightline & add mascara"
+      ]
+    },
+    {
+      "category": "Face",
+      "title": "Dewy Base for Daytime",
+      "thumb": "assets/tutorials/face1.jpg",
+      "youtube": "https://www.youtube.com/watch?v=o-YBDTqX_ZU",
+      "difficulty": "Medium",
+      "duration": "7 min",
+      "steps": [
+        "Hydrate + gripping primer",
+        "Sheer foundation, conceal only where needed",
+        "Cream blush & liquid highlighter",
+        "Set T‑zone lightly"
+      ]
+    },
+    {
+      "category": "Lips",
+      "title": "Long‑Wear Bold Lip",
+      "thumb": "assets/tutorials/lips1.jpg",
+      "youtube": "https://youtu.be/9bZkp7q19f0",
+      "difficulty": "Easy",
+      "duration": "4 min",
+      "steps": [
+        "Exfoliate & balm",
+        "Line + fill with lip pencil",
+        "Apply liquid lipstick; blot and reapply"
+      ]
+    }
+  ]
+}

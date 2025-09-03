@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "name": "Alyssa Mendonsa",
+      "image": "assets/students/alyssa.jpg",
+      "instagram": "https://instagram.com/",
+      "cohort": "Batch 2023",
+      "quote": "My journey post the academy has been amazing — the network and support system immediately brings in work."
+    },
+    {
+      "name": "Sindhu Raj",
+      "image": "assets/students/sindhu.jpg",
+      "instagram": "https://instagram.com/",
+      "cohort": "Batch 2022",
+      "quote": "One‑on‑one attention and advanced techniques helped me feel confident across beauty, editorial and bridal."
+    },
+    {
+      "name": "Hitesh Lamba",
+      "image": "assets/students/hitesh.jpg",
+      "instagram": "https://instagram.com/",
+      "cohort": "Batch 2021",
+      "quote": "Intense learning — detail, hygiene and kit prep to creative editorial looks."
+    }
+  ]
+}

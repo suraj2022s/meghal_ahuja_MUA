@@ -1,0 +1,27 @@
+{
+  "title": "Client Love",
+  "subtitle": "Kind words from brides and photoshoot clients",
+  "items": [
+    {
+      "name": "Aisha K.",
+      "role": "Bride",
+      "avatar": "assets/avatars/aisha.jpg",
+      "rating": 5,
+      "quote": "My makeup lasted 18 hours through heat and happy tears. Felt like myself—just elevated."
+    },
+    {
+      "name": "Rhea D.",
+      "role": "Photoshoot",
+      "avatar": "assets/avatars/rhea.jpg",
+      "rating": 5,
+      "quote": "Skin looked like skin on camera. Subtle sculpt, stunning eyes—exactly as briefed."
+    },
+    {
+      "name": "Meera S.",
+      "role": "Sangeet",
+      "avatar": "assets/avatars/meera.jpg",
+      "rating": 4,
+      "quote": "Smooth booking, punctual, and hygienic. Loved the soft dewy base."
+    }
+  ]
+}

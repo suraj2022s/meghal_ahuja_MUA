@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "image": "assets/press/sample1.png",
+      "alt": "Press Logo 1",
+      "link": "#"
+    },
+    {
+      "image": "assets/press/sample2.png",
+      "alt": "Press Logo 2",
+      "link": "#"
+    },
+    {
+      "image": "assets/press/sample3.png",
+      "alt": "Press Logo 3",
+      "link": "#"
+    }
+  ]
+}
