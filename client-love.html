@@ -8,13 +8,15 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="styles.css" />
 </head><body data-page='testimonials' class='bg-white text-gray-800'>
-<header class="fixed top-0 inset-x-0 z-50 bg-white/75 nav-blur border-b border-gray-100">
+<header class="fixed top-0 inset-x-0 z-50 bg-white/80 nav-blur border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-3">
         <img src="assets/logo.png" alt="Logo" class="w-10 h-10 rounded-full object-cover">
         <span id="siteTitle" class="font-semibold">Meghal Ahuja • MUA</span>
       </a>
+
+      <!-- Desktop nav -->
       <nav class="hidden md:flex items-center gap-6 font-medium">
         <a href="index.html" class="hover:text-fuchsia-600">About</a>
         <a href="services.html" class="hover:text-fuchsia-600">Services</a>
@@ -26,9 +28,41 @@
         <a href="faq.html" class="hover:text-fuchsia-600">FAQ</a>
         <a href="contact.html" class="px-4 py-2 rounded-xl text-white" style="background:linear-gradient(90deg,var(--brand),var(--accent))">Book</a>
       </nav>
+
+      <!-- Mobile button -->
+      <button id="mobileBtn" class="md:hidden p-2 rounded-lg border" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
     </div>
   </div>
+
+  <!-- Backdrop -->
+  <div id="mobileBackdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.30);z-index:9998;"></div>
+
+  <!-- Full-screen panel -->
+  <div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#fff;overflow:auto;z-index:9999;">
+    <div class="p-4 flex items-center justify-between border-b">
+      <span class="font-semibold">Menu</span>
+      <button id="mobileClose" class="p-2 rounded-lg border" aria-label="Close menu">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav id="mobileNav" class="px-6 py-4 text-lg">
+      <a href="index.html" class="mobile-link">About</a>
+      <a href="services.html" class="mobile-link">Services</a>
+      <a href="gallery.html" class="mobile-link">Gallery</a>
+      <a href="student-work.html" class="mobile-link">Student Work</a>
+      <a href="tutorials.html" class="mobile-link">Tutorials</a>
+      <a href="products.html" class="mobile-link">Products</a>
+      <a href="client-love.html" class="mobile-link">Client Love</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+      <a href="contact.html" class="mobile-link">
+        <span class="inline-block w-full text-center px-4 py-3 rounded-xl text-white" style="background:linear-gradient(90deg,var(--brand),var(--accent))">Book</span>
+      </a>
+    </nav>
+  </div>
 </header>
+
 
 <section class="pt-28 sm:pt-32 pb-8">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
