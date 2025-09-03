@@ -415,14 +415,29 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Mobile menu toggle
-  (function () {
-    const btn = document.getElementById('mobileBtn');
-    const closeBtn = document.getElementById('mobileClose');
-    const panel = document.getElementById('mobileMenu');
-    function open() { panel && panel.classList.remove('hidden'); }
-    function close() { panel && panel.classList.add('hidden'); }
-    btn && btn.addEventListener('click', open);
-    closeBtn && closeBtn.addEventListener('click', close);
-    if (panel) panel.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-  })();
+ // Mobile menu toggle (with backdrop + scroll lock)
+(function () {
+  const btn = document.getElementById('mobileBtn');
+  const closeBtn = document.getElementById('mobileClose');
+  const panel = document.getElementById('mobileMenu');
+  const backdrop = document.getElementById('mobileBackdrop');
+
+  function openMenu() {
+    if (panel) panel.classList.remove('hidden');
+    if (backdrop) backdrop.classList.remove('hidden');
+    document.documentElement.classList.add('overflow-hidden');
+    document.body.classList.add('overflow-hidden');
+  }
+  function closeMenu() {
+    if (panel) panel.classList.add('hidden');
+    if (backdrop) backdrop.classList.add('hidden');
+    document.documentElement.classList.remove('overflow-hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  btn && btn.addEventListener('click', openMenu);
+  closeBtn && closeBtn.addEventListener('click', closeMenu);
+  backdrop && backdrop.addEventListener('click', closeMenu);
+  if (panel) panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+})();
 });
