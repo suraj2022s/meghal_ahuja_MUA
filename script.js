@@ -416,6 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile menu toggle (with backdrop + scroll lock)
   // Mobile menu toggle (hard, CSS-independent)
+// Mobile menu toggle (inline styles, no class dependencies)
 (function () {
   const btn = document.getElementById('mobileBtn');
   const closeBtn = document.getElementById('mobileClose');
